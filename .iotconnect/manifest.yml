@@ -10,6 +10,7 @@ schema_version: "1.0"
 repo:
   name: avnet-iotc-mtb-psoc-edge-motion
   display_name: "/IOTCONNECT PSOC™ Edge DEEPCRAFT™ Motion Demo"
+  kind: demo-collection
   tagline: >-
     Deploys a DEEPCRAFT™ Studio human activity detection model on Infineon
     PSOC™ Edge MCUs, streaming detected motions (standing, running, walking,
@@ -35,10 +36,13 @@ repo:
     - imu
     - modustoolbox
 
-  # SDK this repo depends on
-  sdk:
-    repo: avnet-iotconnect/avnet-iotc-mtb-sdk
-    name: "/IOTCONNECT ModusToolbox™ SDK"
+  # SDKs/libraries this repo depends on. List in dependency order
+  # (closest to the application first, foundational library last).
+  sdks:
+    - repo: avnet-iotconnect/avnet-iotc-mtb-sdk
+      name: "/IOTCONNECT ModusToolbox™ SDK"
+    - repo: avnet-iotconnect/iotc-c-lib
+      name: "/IOTCONNECT C Library"
 
   # NEW FIELD: derived/forked from an upstream project. Important context
   # for users to understand what changed and what didn't.
